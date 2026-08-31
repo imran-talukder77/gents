@@ -28,6 +28,7 @@
             <a href="#shop">Shop</a>
             <a href="#collection">Collection</a>
             <a href="#about">About</a>
+            <a href="#order">Order</a>
             <a href="#contact">Contact</a>
         </nav>
 
@@ -267,6 +268,82 @@
     </section>
 
 
+    <!-- order from -->
+
+    <section class="order-section" id="order">
+
+    <div class="order-box">
+
+        <h2>PLACE YOUR ORDER</h2>
+
+        <form id="order-form">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+                required
+            >
+
+            <textarea
+                id="address"
+                placeholder="Your Address"
+                required
+            ></textarea>
+
+            <select id="product" required>
+
+                <option value="">
+                    Select Product
+                </option>
+
+                <option value="Premium Polo Shirt">
+                    Premium Polo Shirt
+                </option>
+
+                <option value="Classic T-Shirt">
+                    Classic T-Shirt
+                </option>
+
+                <option value="Men's Casual Shoes">
+                    Men's Casual Shoes
+                </option>
+
+                <option value="Luxury Watch">
+                    Luxury Watch
+                </option>
+
+            </select>
+
+            <input
+                type="number"
+                id="quantity"
+                placeholder="Quantity"
+                min="1"
+                value="1"
+                required
+            >
+
+            <button type="submit">
+                PLACE ORDER
+            </button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </div>
+
+</section>
+
+
     <!-- ================= FOOTER ================= -->
 
     <footer id="contact">
@@ -333,6 +410,7 @@
     </div>
 
     <script src="script.js"></script>
+    <script type="module" src="firebase.js"></script>
 
 
 </body>
