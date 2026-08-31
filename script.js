@@ -1,5 +1,13 @@
 "use strict";
 
+import { db } from "./firebase.js";
+
+import {
+    collection,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
 /* =========================================================
    GENTS COTTAGE
    Professional E-Commerce JavaScript
@@ -757,7 +765,7 @@ function getCheckoutTotal() {
 
             return total +
                 (Number(item.price) *
-                 Number(item.quantity));
+                    Number(item.quantity));
 
         },
         0
@@ -855,11 +863,11 @@ function renderCheckoutSummary() {
 
             ${checkoutCart.map(item => {
 
-                const subtotal =
-                    Number(item.price) *
-                    Number(item.quantity);
+        const subtotal =
+            Number(item.price) *
+            Number(item.quantity);
 
-                return `
+        return `
 
                     <div class="checkout-product">
 
@@ -895,7 +903,7 @@ function renderCheckoutSummary() {
 
                 `;
 
-            }).join("")}
+    }).join("")}
 
         </div>
 
@@ -1746,7 +1754,7 @@ filterButtons.forEach(button => {
                     if (
                         category === "all" ||
                         cardCategory ===
-                            category
+                        category
                     ) {
 
                         card.style.display =
@@ -1941,10 +1949,10 @@ window.addEventListener(
 
             if (
                 window.scrollY >=
-                    sectionTop &&
+                sectionTop &&
                 window.scrollY <
-                    sectionTop +
-                        sectionHeight
+                sectionTop +
+                sectionHeight
             ) {
 
                 current =
@@ -1991,321 +1999,47 @@ window.addEventListener(
    ORDER FORM
 ========================================================= */
 
-if (orderForm) {
 
-    orderForm.addEventListener(
-        "submit",
-        event => {
+/* ========================================================= ORDER FORM PROFESSIONAL CHECKOUT + ORDER CONFIRMATION ========================================================= */ if (orderForm) { orderForm.addEventListener("submit", async function (event) { event.preventDefault(); /* ===================================================== GET FORM DATA ===================================================== */ const name = document.getElementById("name")?.value.trim() || ""; const phone = document.getElementById("phone")?.value.trim() || ""; const address = document.getElementById("address")?.value.trim() || ""; const product = document.getElementById("product")?.value || ""; const quantity = Number(document.getElementById("quantity")?.value || 0); const size = document.getElementById("size")?.value || ""; const payment = document.getElementById("payment")?.value || ""; /* ===================================================== VALIDATION ===================================================== */ if (!name) { showNotification("Please enter your name"); return; } if (!phone) { showNotification("Please enter your phone number"); return; } if (!/^01[3-9]\d{8}$/.test(phone)) { showNotification("Please enter a valid Bangladesh phone number"); return; } if (!address) { showNotification("Please enter your address"); return; } if (!payment) { showNotification("Please select payment method"); return; } /* ===================================================== PREPARE ORDER ITEMS ===================================================== */ let orderItems = []; /* যদি Checkout থেকে cart আসে */ if (Array.isArray(checkoutCart) && checkoutCart.length > 0) { orderItems = checkoutCart.map(item => ({ id: Number(item.id), name: item.name, price: Number(item.price), quantity: Number(item.quantity), size: item.size || size || "", image: item.image || "" })); } /* যদি সরাসরি single product order হয় */ else { if (!product) { showNotification("Please select a product"); return; } if (!quantity || quantity < 1) { showNotification("Please enter valid quantity"); return; } const selectedProduct = products.find(item => item.name === product); if (!selectedProduct) { showNotification("Product not found"); return; } orderItems = [{ id: selectedProduct.id, name: selectedProduct.name, price: Number(selectedProduct.price), quantity: quantity, size: size || "", image: selectedProduct.image }]; } /* ===================================================== SAFETY CHECK ===================================================== */ if (orderItems.length === 0) { showNotification("No products found in your order"); return; } /* ===================================================== CALCULATE TOTAL ===================================================== */ const totalPrice = orderItems.reduce((total, item) => { return total + (Number(item.price) * Number(item.quantity)); }, 0); const totalItems = orderItems.reduce((total, item) => { return total + Number(item.quantity); }, 0); /* ===================================================== CREATE ORDER ID ===================================================== */ const orderId = "GC-" + Date.now().toString().slice(-8); /* ===================================================== ORDER OBJECT ===================================================== */ const confirmedOrder = { orderId: orderId, customer: { name: name, phone: phone, address: address }, items: orderItems, totalItems: totalItems, totalPrice: totalPrice, paymentMethod: payment, orderDate: new Date().toISOString(), status: "Confirmed" }; 
 
-            event.preventDefault();
-
-
-            const name =
-                document
-                    .getElementById("name")
-                    ?.value
-                    .trim();
-
-
-            const phone =
-                document
-                    .getElementById("phone")
-                    ?.value
-                    .trim();
-
-
-            const address =
-                document
-                    .getElementById("address")
-                    ?.value
-                    .trim();
-
-
-            const product =
-                document
-                    .getElementById("product")
-                    ?.value;
-
-
-            const quantity =
-                Number(
-                    document
-                        .getElementById(
-                            "quantity"
-                        )
-                        ?.value
-                );
-
-
-            const size =
-                document
-                    .getElementById("size")
-                    ?.value;
-
-
-            const payment =
-                document
-                    .getElementById("payment")
-                    ?.value;
-
-
-            /* Validation */
-
-            if (!name) {
-
-                showNotification(
-                    "Please enter your name"
-                );
-
-                return;
-
-            }
-
-
-            if (!phone) {
-
-                showNotification(
-                    "Please enter your phone number"
-                );
-
-                return;
-
-            }
-
-
-            if (
-                phone.length < 11
-            ) {
-
-                showNotification(
-                    "Please enter a valid phone number"
-                );
-
-                return;
-
-            }
-
-
-            if (!address) {
-
-                showNotification(
-                    "Please enter your address"
-                );
-
-                return;
-
-            }
-
-
-            if (!product) {
-
-                showNotification(
-                    "Please select a product"
-                );
-
-                return;
-
-            }
-
-
-            if (
-                !quantity ||
-                quantity < 1
-            ) {
-
-                showNotification(
-                    "Please enter valid quantity"
-                );
-
-                return;
-
-            }
-
-
-            if (!payment) {
-
-                showNotification(
-                    "Please select payment method"
-                );
-
-                return;
-
-            }
-
-
-            /*
-               Product price বের করা
-            */
-
-            /* =====================================================
-   FINAL ORDER CALCULATION
+/* =====================================================
+   SAVE ORDER TO FIREBASE
 ===================================================== */
 
-let totalPrice = 0;
+try {
 
-
-/*
-   যদি Checkout থেকে পুরো cart আসে,
-   তাহলে পুরো cart-এর total হবে।
-*/
-
-if (checkoutCart && checkoutCart.length > 0) {
-
-    totalPrice =
-        checkoutCart.reduce(
-            (total, item) => {
-
-                return total +
-                    (
-                        Number(item.price) *
-                        Number(item.quantity)
-                    );
-
-            },
-            0
-        );
-
-} else {
-
-    /*
-       Direct order করলে selected
-       product-এর total হবে।
-    */
-
-    const selectedProduct =
-        products.find(
-            item =>
-                item.name === product
-        );
-
-
-    if (selectedProduct) {
-
-        totalPrice =
-            Number(selectedProduct.price) *
-            Number(quantity);
-
-    }
-
-}
-
-
-            /*
-               Success message
-            */
-
-            if (message) {
-
-                message.innerHTML = `
-
-                    <strong>
-                        ✓ Order Received Successfully!
-                    </strong>
-
-                    <br>
-
-                    Thank you, ${name}.
-
-                    <br>
-
-                    Product:
-                    ${product}
-
-                    <br>
-
-                    Quantity:
-                    ${quantity}
-
-                    <br>
-
-                    Total:
-                    ${formatPrice(totalPrice)}
-
-                `;
-
-            }
-
-
-            showNotification(
-                "Your order has been received!"
-            );
-
-
-            /*
-               Form reset
-            */
-
-            orderForm.reset();
-
-
-            if (orderQuantity) {
-
-                orderQuantity.value = 1;
-
-            }
-
-
-            /*
-               Order করা product cart থেকে remove
-               করবে
-            */
-
-            /* =====================================================
-   CLEAR CART AFTER SUCCESSFUL ORDER
-===================================================== */
-
-if (checkoutCart && checkoutCart.length > 0) {
-
-    /*
-       Checkout-এর সব product order হয়েছে,
-       তাই পুরো cart clear হবে।
-    */
-
-    cart = [];
-
-    checkoutCart = [];
-
-} else {
-
-    /*
-       Direct single-product order
-    */
-
-    const selectedProduct =
-        products.find(
-            item =>
-                item.name === product
-        );
-
-
-    if (selectedProduct) {
-
-        cart =
-            cart.filter(
-                item =>
-                    item.id !==
-                    selectedProduct.id
-            );
-
-    }
-
-}
-
-
-/*
-   Save updated cart
-*/
-
-saveCart();
-
-updateCartCount();
-
-renderCart();
-
+    const orderRef = await addDoc(
+        collection(db, "orders"),
+        {
+            ...confirmedOrder,
+            createdAt: serverTimestamp()
         }
     );
 
+    console.log(
+        "Order saved to Firebase:",
+        orderRef.id
+    );
+
+} catch (error) {
+
+    console.error(
+        "Firebase order error:",
+        error
+    );
+
+    showNotification(
+        "Order could not be saved. Please try again."
+    );
+
+    return;
+
 }
+
+/* ===================================================== SHOW PROFESSIONAL CONFIRMATION ===================================================== */ if (message) { message.innerHTML = ` <div class="order-success"> <div class="success-icon"> ✓ </div> <h3> Order Confirmed! </h3> <p> Thank you, <strong>${name}</strong>. </p> <div class="order-confirm-box"> <p> <strong>Order ID:</strong> ${orderId} </p> <p> <strong>Total Items:</strong> ${totalItems} </p> <p> <strong>Total Amount:</strong> ${formatPrice(totalPrice)} </p> <p> <strong>Payment:</strong> ${payment} </p> </div> <div class="confirmed-products"> <h4> Order Summary </h4> ${orderItems.map(item => ` <div class="confirmed-product"> <span> ${item.name} × ${item.quantity} </span> <strong> ${formatPrice(item.price * item.quantity)} </strong> </div> `).join("")} </div> <p class="order-note"> We have received your order. Our team will contact you shortly. </p> </div> `; } /* ===================================================== SUCCESS NOTIFICATION ===================================================== */ showNotification(`Order ${orderId} confirmed successfully!`); /* ===================================================== CLEAR CART ===================================================== */ cart = []; checkoutCart = []; saveCart(); updateCartCount(); renderCart(); /* ===================================================== RESET FORM ===================================================== */ orderForm.reset(); if (orderQuantity) { orderQuantity.value = 1; } /* ===================================================== SCROLL TO CONFIRMATION ===================================================== */ if (message) { setTimeout(() => { message.scrollIntoView({ behavior: "smooth", block: "center" }); }, 150); } }); }
+
+
+
 
 
 /* =========================================================
@@ -2356,7 +2090,7 @@ document
 
         anchor.addEventListener(
             "click",
-            function(event) {
+            function (event) {
 
                 const targetId =
                     this.getAttribute(
