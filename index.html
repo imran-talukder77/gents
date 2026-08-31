@@ -5,98 +5,266 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gents Cottage</title>
+    <title>Gents Cottage | Premium Men's Fashion</title>
 
+    <meta name="description"
+        content="Gents Cottage - Premium men's fashion, trendy clothing, shoes, watches and accessories in Bangladesh.">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- ==================================================
+                         TOP BAR
+    ================================================== -->
 
-    <header>
+    <div class="top-bar">
 
-        <div class="logo">
-            <span>GENTS</span> COTTAGE
+        <p>
+            <i class="fa-solid fa-truck"></i>
+            Free Delivery on Orders Over ৳2000
+        </p>
+
+        <div class="top-links">
+            <a href="#track-order">Track Order</a>
+            <a href="#contact">Help Center</a>
         </div>
 
-        <nav>
-            <a href="#home">Home</a>
+    </div>
+
+
+    <!-- ==================================================
+                         NAVBAR
+    ================================================== -->
+
+    <header class="navbar" id="navbar">
+
+        <div class="logo">
+            <a href="#home">
+                <span>GENTS</span> COTTAGE
+            </a>
+        </div>
+
+
+        <nav class="nav-menu">
+
+            <a href="#home" class="active">Home</a>
+
             <a href="#shop">Shop</a>
-            <a href="#collection">Collection</a>
+
+            <a href="#collection">Collections</a>
+
+            <a href="#new-arrivals">New Arrivals</a>
+
+            <a href="#offers">Offers</a>
+
             <a href="#about">About</a>
-            <a href="#order">Order</a>
+
             <a href="#contact">Contact</a>
+
         </nav>
+
 
         <div class="nav-icons">
 
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <!-- Search -->
+            <button class="icon-btn" id="search-btn" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
 
-            <div class="cart-icon">
-                <i class="fa-solid fa-cart-shopping"></i>
+
+            <!-- Wishlist -->
+            <button class="icon-btn wishlist-btn" id="wishlist-btn" aria-label="Wishlist">
+
+                <i class="fa-regular fa-heart"></i>
+
+                <span id="wishlist-count">0</span>
+
+            </button>
+
+
+            <!-- Cart -->
+            <button class="icon-btn cart-btn" id="cart-btn" aria-label="Shopping Cart">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
                 <span id="cart-count">0</span>
-            </div>
 
-            <i class="fa-solid fa-user"></i>
+            </button>
+
+
+            <!-- User -->
+            <button class="icon-btn" id="user-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </button>
+
+
+            <!-- Mobile Menu -->
+            <button class="menu-btn" id="menu-btn" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
         </div>
 
     </header>
 
 
-    <!-- ================= HERO ================= -->
+    <!-- ==================================================
+                       SEARCH OVERLAY
+    ================================================== -->
+
+    <div class="search-overlay" id="search-overlay">
+
+        <div class="search-box">
+
+            <button class="close-search" id="close-search">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h2>What are you looking for?</h2>
+
+            <div class="search-input">
+
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Search products..."
+                >
+
+                <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+                          HERO SECTION
+    ================================================== -->
 
     <section class="hero" id="home">
 
         <div class="hero-content">
 
-            <p class="small-title">
-                MEN'S FASHION STORE
+            <p class="hero-subtitle">
+                PREMIUM MEN'S FASHION
             </p>
 
             <h1>
-                STYLE THAT <br>
+                STYLE THAT
+                <br>
                 <span>DEFINES YOU</span>
             </h1>
 
-            <p class="hero-text">
-                Discover premium fashion for modern gentlemen.
-                Style, comfort and confidence in every outfit.
+            <p class="hero-description">
+
+                Discover premium fashion designed for
+                modern gentlemen. Quality, comfort and
+                confidence in every outfit.
+
             </p>
 
-            <button>
-                SHOP NOW
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
+
+            <div class="hero-buttons">
+
+                <a href="#shop" class="btn btn-primary">
+                    SHOP NOW
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="#collection" class="btn btn-outline">
+                    EXPLORE COLLECTION
+                </a>
+
+            </div>
+
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>500+</strong>
+                    <span>Products</span>
+                </div>
+
+                <div>
+                    <strong>10K+</strong>
+                    <span>Customers</span>
+                </div>
+
+                <div>
+                    <strong>4.9</strong>
+                    <span>Rating</span>
+                </div>
+
+            </div>
 
         </div>
 
 
         <div class="hero-image">
 
-            <!-- নিজের ছবির নাম এখানে দিবে -->
-            <img src="image/ChatGPT Image Aug 31, 2026, 01_30_09 AM.png" alt="Gents Fashion">
+            <div class="hero-image-badge">
+
+                <span>NEW</span>
+
+                <strong>2026</strong>
+
+                <small>COLLECTION</small>
+
+            </div>
+
+            <img
+                src="image/ChatGPT Image Aug 31, 2026, 01_30_09 AM.png"
+                alt="Gents Cottage Men's Fashion"
+            >
 
         </div>
 
     </section>
 
 
-    <!-- ================= FEATURES ================= -->
+    <!-- ==================================================
+                       FEATURES SECTION
+    ================================================== -->
 
     <section class="features">
 
         <div class="feature">
 
-            <i class="fa-solid fa-shirt"></i>
+            <i class="fa-solid fa-truck-fast"></i>
 
             <div>
-                <h3>Trendy Collection</h3>
-                <p>Latest fashion styles</p>
+                <h3>Fast Delivery</h3>
+                <p>Fast & reliable delivery</p>
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <div>
+                <h3>Secure Payment</h3>
+                <p>100% secure payment</p>
             </div>
 
         </div>
@@ -108,19 +276,7 @@
 
             <div>
                 <h3>Premium Quality</h3>
-                <p>Best quality products</p>
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <i class="fa-solid fa-tag"></i>
-
-            <div>
-                <h3>Affordable Price</h3>
-                <p>Best price guaranteed</p>
+                <p>Quality you can trust</p>
             </div>
 
         </div>
@@ -131,8 +287,8 @@
             <i class="fa-solid fa-headset"></i>
 
             <div>
-                <h3>Customer Service</h3>
-                <p>Always here for you</p>
+                <h3>24/7 Support</h3>
+                <p>We're here to help</p>
             </div>
 
         </div>
@@ -140,7 +296,131 @@
     </section>
 
 
-    <!-- ================= PRODUCTS ================= -->
+    <!-- ==================================================
+                      CATEGORY SECTION
+    ================================================== -->
+
+    <section class="categories" id="collection">
+
+        <div class="section-title">
+
+            <p>SHOP BY CATEGORY</p>
+
+            <h2>EXPLORE COLLECTION</h2>
+
+            <span>
+                Find your perfect style from our premium collections.
+            </span>
+
+        </div>
+
+
+        <div class="category-container">
+
+
+            <a href="#shop" class="category-card">
+
+                <div class="category-image">
+
+                    <img
+                        src="images/category-shirts.jpg"
+                        alt="Men's Shirts"
+                    >
+
+                </div>
+
+                <div class="category-info">
+
+                    <h3>Shirts</h3>
+
+                    <p>Explore Collection</p>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
+
+
+            <a href="#shop" class="category-card">
+
+                <div class="category-image">
+
+                    <img
+                        src="images/category-tshirts.jpg"
+                        alt="Men's T-Shirts"
+                    >
+
+                </div>
+
+                <div class="category-info">
+
+                    <h3>T-Shirts</h3>
+
+                    <p>Explore Collection</p>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
+
+
+            <a href="#shop" class="category-card">
+
+                <div class="category-image">
+
+                    <img
+                        src="images/category-shoes.jpg"
+                        alt="Men's Shoes"
+                    >
+
+                </div>
+
+                <div class="category-info">
+
+                    <h3>Shoes</h3>
+
+                    <p>Explore Collection</p>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
+
+
+            <a href="#shop" class="category-card">
+
+                <div class="category-image">
+
+                    <img
+                        src="images/category-accessories.jpg"
+                        alt="Men's Accessories"
+                    >
+
+                </div>
+
+                <div class="category-info">
+
+                    <h3>Accessories</h3>
+
+                    <p>Explore Collection</p>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+                      PRODUCTS SECTION
+    ================================================== -->
 
     <section class="products" id="shop">
 
@@ -150,6 +430,41 @@
 
             <h2>POPULAR PRODUCTS</h2>
 
+            <span>
+                Handpicked styles for the modern gentleman.
+            </span>
+
+        </div>
+
+
+        <!-- Product Filter -->
+
+        <div class="product-filter">
+
+            <button class="filter-btn active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="shirt">
+                Shirts
+            </button>
+
+            <button class="filter-btn" data-filter="tshirt">
+                T-Shirts
+            </button>
+
+            <button class="filter-btn" data-filter="shoes">
+                Shoes
+            </button>
+
+            <button class="filter-btn" data-filter="watch">
+                Watches
+            </button>
+
+            <button class="filter-btn" data-filter="accessories">
+                Accessories
+            </button>
+
         </div>
 
 
@@ -158,85 +473,686 @@
 
             <!-- Product 1 -->
 
-            <div class="product-card">
+            <div class="product-card" data-category="shirt">
 
                 <div class="product-image">
-                    <img src="images/product1.jpg" alt="Polo Shirt">
+
+                    <span class="product-badge">
+                        NEW
+                    </span>
+
+                    <button class="wishlist-product">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <img
+                        src="images/product1.jpg"
+                        alt="Premium Polo Shirt"
+                    >
+
+                    <button class="quick-view">
+                        QUICK VIEW
+                    </button>
+
                 </div>
+
 
                 <div class="product-info">
 
+                    <div class="product-rating">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                        <span>(24)</span>
+
+                    </div>
+
                     <h3>Premium Polo Shirt</h3>
 
-                    <p class="price">৳ 1,250</p>
+                    <p class="price">
+                        ৳ 1,250
+                    </p>
 
-                    <button class="add-cart">Add To Cart</button>
+                    <button class="add-cart" data-product="Premium Polo Shirt">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                        ADD TO CART
+
+                    </button>
 
                 </div>
 
             </div>
-
 
 
             <!-- Product 2 -->
 
-            <div class="product-card">
+            <div class="product-card" data-category="tshirt">
 
                 <div class="product-image">
-                    <img src="images/product2.jpg" alt="T-Shirt">
+
+                    <span class="product-badge sale">
+                        SALE
+                    </span>
+
+                    <button class="wishlist-product">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <img
+                        src="images/product2.jpg"
+                        alt="Classic T-Shirt"
+                    >
+
+                    <button class="quick-view">
+                        QUICK VIEW
+                    </button>
+
                 </div>
+
 
                 <div class="product-info">
 
+                    <div class="product-rating">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+
+                        <span>(18)</span>
+
+                    </div>
+
                     <h3>Classic T-Shirt</h3>
 
-                    <p class="price">৳ 850</p>
+                    <p class="price">
 
-                    <button class="add-cart">Add To Cart</button>
+                        <del>৳ 1,000</del>
+
+                        ৳ 850
+
+                    </p>
+
+                    <button class="add-cart" data-product="Classic T-Shirt">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                        ADD TO CART
+
+                    </button>
 
                 </div>
 
             </div>
-
 
 
             <!-- Product 3 -->
 
-            <div class="product-card">
+            <div class="product-card" data-category="shoes">
 
                 <div class="product-image">
-                    <img src="images/product3.jpg" alt="Shoes">
+
+                    <span class="product-badge">
+                        POPULAR
+                    </span>
+
+                    <button class="wishlist-product">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <img
+                        src="images/product3.jpg"
+                        alt="Men's Casual Shoes"
+                    >
+
+                    <button class="quick-view">
+                        QUICK VIEW
+                    </button>
+
                 </div>
+
 
                 <div class="product-info">
 
+                    <div class="product-rating">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                        <span>(36)</span>
+
+                    </div>
+
                     <h3>Men's Casual Shoes</h3>
 
-                    <p class="price">৳ 2,500</p>
+                    <p class="price">
+                        ৳ 2,500
+                    </p>
 
-                    <button class="add-cart">Add To Cart</button>
+                    <button class="add-cart" data-product="Men's Casual Shoes">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                        ADD TO CART
+
+                    </button>
 
                 </div>
 
             </div>
-
 
 
             <!-- Product 4 -->
 
-            <div class="product-card">
+            <div class="product-card" data-category="watch">
 
                 <div class="product-image">
-                    <img src="images/product4.jpg" alt="Watch">
+
+                    <span class="product-badge">
+                        PREMIUM
+                    </span>
+
+                    <button class="wishlist-product">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <img
+                        src="images/product4.jpg"
+                        alt="Luxury Watch"
+                    >
+
+                    <button class="quick-view">
+                        QUICK VIEW
+                    </button>
+
                 </div>
+
 
                 <div class="product-info">
 
+                    <div class="product-rating">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                        <span>(42)</span>
+
+                    </div>
+
                     <h3>Luxury Watch</h3>
 
-                    <p class="price">৳ 3,200</p>
+                    <p class="price">
+                        ৳ 3,200
+                    </p>
 
-                    <button class="add-cart">Add To Cart</button>
+                    <button class="add-cart" data-product="Luxury Watch">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                        ADD TO CART
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 5 -->
+
+            <div class="product-card" data-category="shirt">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        NEW
+                    </span>
+
+                    <button class="wishlist-product">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <img
+                        src="images/product5.jpg"
+                        alt="Premium Formal Shirt"
+                    >
+
+                    <button class="quick-view">
+                        QUICK VIEW
+                    </button>
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="product-rating">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                        <span>(21)</span>
+
+                    </div>
+
+                    <h3>Premium Formal Shirt</h3>
+
+                    <p class="price">
+                        ৳ 1,450
+                    </p>
+
+                    <button class="add-cart" data-product="Premium Formal Shirt">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                        ADD TO CART
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 6 -->
+
+            <div class="product-card" data-category="tshirt">
+
+                <div class="product-image">
+
+                    <span class="product-badge sale">
+                        -20%
+                    </span>
+
+                    <button class="wishlist-product">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <img
+                        src="images/product6.jpg"
+                        alt="Oversized T-Shirt"
+                    >
+
+                    <button class="quick-view">
+                        QUICK VIEW
+                    </button>
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="product-rating">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+
+                        <span>(15)</span>
+
+                    </div>
+
+                    <h3>Premium Oversized T-Shirt</h3>
+
+                    <p class="price">
+
+                        <del>৳ 1,200</del>
+
+                        ৳ 960
+
+                    </p>
+
+                    <button class="add-cart" data-product="Premium Oversized T-Shirt">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                        ADD TO CART
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="view-all">
+
+            <a href="#" class="btn btn-dark">
+                VIEW ALL PRODUCTS
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+                         OFFER BANNER
+    ================================================== -->
+
+    <section class="offer" id="offers">
+
+        <div class="offer-content">
+
+            <p>LIMITED TIME OFFER</p>
+
+            <h2>
+                LOOK GOOD.
+                <br>
+                FEEL CONFIDENT.
+            </h2>
+
+            <span>
+                Get up to <strong>30% OFF</strong> on selected products.
+            </span>
+
+            <a href="#shop" class="btn btn-light">
+                SHOP SALE
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+                      NEW ARRIVALS
+    ================================================== -->
+
+    <section class="new-arrivals" id="new-arrivals">
+
+        <div class="section-title">
+
+            <p>JUST DROPPED</p>
+
+            <h2>NEW ARRIVALS</h2>
+
+            <span>
+                Fresh styles. New season. New you.
+            </span>
+
+        </div>
+
+
+        <div class="arrival-container">
+
+            <div class="arrival-card">
+
+                <img
+                    src="images/new1.jpg"
+                    alt="New Men's Collection"
+                >
+
+                <div>
+
+                    <span>NEW COLLECTION</span>
+
+                    <h3>Urban Essentials</h3>
+
+                    <a href="#shop">
+                        SHOP NOW
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="arrival-card">
+
+                <img
+                    src="images/new2.jpg"
+                    alt="Premium Men's Wear"
+                >
+
+                <div>
+
+                    <span>PREMIUM EDIT</span>
+
+                    <h3>Classic Gentleman</h3>
+
+                    <a href="#shop">
+                        SHOP NOW
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+                        WHY US
+    ================================================== -->
+
+    <section class="why-us" id="about">
+
+        <div class="why-image">
+
+            <img
+                src="images/about.jpg"
+                alt="Gents Cottage"
+            >
+
+        </div>
+
+
+        <div class="why-content">
+
+            <p class="section-small-title">
+                WHY GENTS COTTAGE?
+            </p>
+
+            <h2>
+                FASHION MADE
+                <br>
+                FOR <span>GENTLEMEN.</span>
+            </h2>
+
+            <p>
+
+                At Gents Cottage, we believe fashion is more than
+                just clothing. It's about confidence, personality
+                and the way you present yourself.
+
+            </p>
+
+            <p>
+
+                We carefully select premium products that combine
+                modern style, comfort and quality at an affordable
+                price.
+
+            </p>
+
+
+            <div class="why-points">
+
+                <div>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    <span>Premium Quality Products</span>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    <span>Affordable Pricing</span>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    <span>Trusted Customer Service</span>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    <span>Fast Delivery Across Bangladesh</span>
+
+                </div>
+
+            </div>
+
+
+            <a href="#contact" class="btn btn-dark">
+                LEARN MORE
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+                       CUSTOMER REVIEWS
+    ================================================== -->
+
+    <section class="reviews">
+
+        <div class="section-title">
+
+            <p>WHAT OUR CUSTOMERS SAY</p>
+
+            <h2>HAPPY CUSTOMERS</h2>
+
+        </div>
+
+
+        <div class="review-container">
+
+
+            <div class="review-card">
+
+                <div class="review-stars">
+
+                    ★★★★★
+
+                </div>
+
+                <p>
+
+                    "Quality was really good and the delivery
+                    was very fast. Definitely buying again."
+
+                </p>
+
+                <div class="customer">
+
+                    <div class="customer-avatar">
+                        R
+                    </div>
+
+                    <div>
+
+                        <strong>Rafi</strong>
+
+                        <span>Verified Customer</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="review-stars">
+
+                    ★★★★★
+
+                </div>
+
+                <p>
+
+                    "The shirt quality is amazing. Product
+                    looks exactly like the pictures."
+
+                </p>
+
+                <div class="customer">
+
+                    <div class="customer-avatar">
+                        I
+                    </div>
+
+                    <div>
+
+                        <strong>Imran</strong>
+
+                        <span>Verified Customer</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="review-stars">
+
+                    ★★★★★
+
+                </div>
+
+                <p>
+
+                    "Very nice collection and reasonable
+                    prices. Highly recommended."
+
+                </p>
+
+                <div class="customer">
+
+                    <div class="customer-avatar">
+                        S
+                    </div>
+
+                    <div>
+
+                        <strong>Shakil</strong>
+
+                        <span>Verified Customer</span>
+
+                    </div>
 
                 </div>
 
@@ -248,153 +1164,544 @@
     </section>
 
 
-    <!-- ================= BANNER ================= -->
+    <!-- ==================================================
+                         FAQ SECTION
+    ================================================== -->
 
-    <section class="offer">
+    <section class="faq">
 
-        <div>
+        <div class="section-title">
 
-            <p>NEW COLLECTION</p>
+            <p>NEED HELP?</p>
 
-            <h2>
-                LOOK GOOD. <br>
-                FEEL CONFIDENT.
-            </h2>
+            <h2>FREQUENTLY ASKED QUESTIONS</h2>
 
-            <button>EXPLORE NOW</button>
+        </div>
+
+
+        <div class="faq-container">
+
+            <details>
+
+                <summary>
+                    How can I place an order?
+                    <i class="fa-solid fa-plus"></i>
+                </summary>
+
+                <p>
+                    Select your product, choose the quantity,
+                    provide your delivery information and
+                    click the Place Order button.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    How long does delivery take?
+                    <i class="fa-solid fa-plus"></i>
+                </summary>
+
+                <p>
+                    Delivery usually takes 2-5 working days
+                    depending on your location.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    What payment methods are available?
+                    <i class="fa-solid fa-plus"></i>
+                </summary>
+
+                <p>
+                    We support Cash on Delivery and selected
+                    online payment methods.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Can I return or exchange a product?
+                    <i class="fa-solid fa-plus"></i>
+                </summary>
+
+                <p>
+                    Yes. Products can be returned or exchanged
+                    according to our return policy.
+                </p>
+
+            </details>
 
         </div>
 
     </section>
 
 
-    <!-- order from -->
+    <!-- ==================================================
+                       ORDER SECTION
+    ================================================== -->
 
     <section class="order-section" id="order">
 
-    <div class="order-box">
+        <div class="order-container">
 
-        <h2>PLACE YOUR ORDER</h2>
 
-        <form id="order-form">
+            <div class="order-info">
+
+                <p>FAST & EASY</p>
+
+                <h2>
+                    PLACE YOUR
+                    <span>ORDER</span>
+                </h2>
+
+                <p>
+                    Fill out the form and our team will contact
+                    you shortly to confirm your order.
+                </p>
+
+
+                <div class="order-benefits">
+
+                    <div>
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <span>
+                            <strong>Quick Confirmation</strong>
+                            We'll call you to confirm.
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-truck"></i>
+
+                        <span>
+                            <strong>Fast Delivery</strong>
+                            Delivery across Bangladesh.
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-money-bill"></i>
+
+                        <span>
+                            <strong>Cash on Delivery</strong>
+                            Pay after receiving your order.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="order-box">
+
+                <h2>PLACE YOUR ORDER</h2>
+
+                <!-- <div class="checkout-summary" id="checkout-summary" aria-live="polite">
+                    <div class="checkout-summary-head">
+                        <span><i class="fa-solid fa-bag-shopping"></i> Order Summary</span>
+                        <strong id="checkout-item-count">0 items</strong>
+                    </div>
+                    <div class="checkout-summary-items" id="checkout-summary-items">
+                        <p class="checkout-empty">Your cart is empty.</p>
+                    </div>
+                    <div class="checkout-summary-total">
+                        <span>Total Amount</span>
+                        <strong id="checkout-total">৳ 0</strong>
+                    </div>
+                </div> -->
+
+                <form id="order-form">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="01XXXXXXXXX"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="address">
+                            Delivery Address
+                        </label>
+
+                        <textarea
+                            id="address"
+                            placeholder="Enter your full address"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="product">
+                                Select Product
+                            </label>
+
+                            <select id="product" required>
+
+                                <option value="">
+                                    Select Product
+                                </option>
+
+                                <option value="Premium Polo Shirt">
+                                    Premium Polo Shirt
+                                </option>
+
+                                <option value="Classic T-Shirt">
+                                    Classic T-Shirt
+                                </option>
+
+                                <option value="Men's Casual Shoes">
+                                    Men's Casual Shoes
+                                </option>
+
+                                <option value="Luxury Watch">
+                                    Luxury Watch
+                                </option>
+
+                                <option value="Premium Formal Shirt">
+                                    Premium Formal Shirt
+                                </option>
+
+                                <option value="Premium Oversized T-Shirt">
+                                    Premium Oversized T-Shirt
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                type="number"
+                                id="quantity"
+                                min="1"
+                                value="1"
+                                required
+                            >
+
+                        </div>
+
+                    </div> -->
+
+
+                    <!-- <div class="form-group">
+
+                        <label for="size">
+                            Select Size
+                        </label>
+
+                        <select id="size">
+
+                            <option value="">
+                                Select Size
+                            </option>
+
+                            <option value="S">Small (S)</option>
+
+                            <option value="M">Medium (M)</option>
+
+                            <option value="L">Large (L)</option>
+
+                            <option value="XL">Extra Large (XL)</option>
+
+                            <option value="XXL">Double XL (XXL)</option>
+
+                        </select>
+
+                    </div> -->
+
+
+                    <div class="form-group">
+
+                        <label for="payment">
+                            Payment Method
+                        </label>
+
+                        <select id="payment" required>
+
+                            <option value="">
+                                Select Payment Method
+                            </option>
+
+                            <option value="Cash on Delivery">
+                                Cash on Delivery
+                            </option>
+
+                            <option value="bKash">
+                                bKash
+                            </option>
+
+                            <option value="Nagad">
+                                Nagad
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button type="submit" class="order-btn">
+
+                        PLACE ORDER
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+
+                <p id="message"></p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+                       NEWSLETTER
+    ================================================== -->
+
+    <section class="newsletter">
+
+        <div>
+
+            <p>STAY IN STYLE</p>
+
+            <h2>
+                GET THE LATEST FROM
+                GENTS COTTAGE
+            </h2>
+
+            <span>
+                Subscribe to receive new arrivals, exclusive
+                offers and special discounts.
+            </span>
+
+        </div>
+
+
+        <form id="newsletter-form">
 
             <input
-                type="text"
-                id="name"
-                placeholder="Your Name"
-                required
-            >
-
-            <input
-                type="tel"
-                id="phone"
-                placeholder="Phone Number"
-                required
-            >
-
-            <textarea
-                id="address"
-                placeholder="Your Address"
-                required
-            ></textarea>
-
-            <select id="product" required>
-
-                <option value="">
-                    Select Product
-                </option>
-
-                <option value="Premium Polo Shirt">
-                    Premium Polo Shirt
-                </option>
-
-                <option value="Classic T-Shirt">
-                    Classic T-Shirt
-                </option>
-
-                <option value="Men's Casual Shoes">
-                    Men's Casual Shoes
-                </option>
-
-                <option value="Luxury Watch">
-                    Luxury Watch
-                </option>
-
-            </select>
-
-            <input
-                type="number"
-                id="quantity"
-                placeholder="Quantity"
-                min="1"
-                value="1"
+                type="email"
+                placeholder="Enter your email address"
                 required
             >
 
             <button type="submit">
-                PLACE ORDER
+                SUBSCRIBE
             </button>
 
         </form>
 
-        <p id="message"></p>
-
-    </div>
-
-</section>
+    </section>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- ==================================================
+                          FOOTER
+    ================================================== -->
 
     <footer id="contact">
 
-        <div class="footer-logo">
 
-            <h2>
-                GENTS <span>COTTAGE</span>
-            </h2>
+        <div class="footer-container">
 
-            <p>
-                Your destination for modern men's fashion.
-            </p>
+
+            <!-- Brand -->
+
+            <div class="footer-column footer-brand">
+
+                <div class="footer-logo">
+
+                    <h2>
+                        GENTS
+                        <span>COTTAGE</span>
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Your destination for modern men's fashion.
+                    Premium style, quality and confidence
+                    in every outfit.
+                </p>
+
+
+                <div class="social-icons">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick Links -->
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+
+                <a href="#shop">Shop</a>
+
+                <a href="#collection">Collections</a>
+
+                <a href="#new-arrivals">New Arrivals</a>
+
+                <a href="#offers">Offers</a>
+
+                <a href="#about">About Us</a>
+
+            </div>
+
+
+            <!-- Customer Service -->
+
+            <div class="footer-column">
+
+                <h3>Customer Service</h3>
+
+                <a href="#order">Place Order</a>
+
+                <a href="#track-order">Track Order</a>
+
+                <a href="#">Return Policy</a>
+
+                <a href="#">Privacy Policy</a>
+
+                <a href="#">Terms & Conditions</a>
+
+                <a href="#faq">FAQ</a>
+
+            </div>
+
+
+            <!-- Contact -->
+
+            <div class="footer-column contact-column">
+
+                <h3>Contact Us</h3>
+
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Tangail, Bangladesh
+                </p>
+
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +880 1890717577
+                </p>
+
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    gentscottage@gmail.com
+                </p>
+
+
+                <p>
+                    <i class="fa-solid fa-clock"></i>
+                    Sat - Thu: 10AM - 10PM
+                </p>
+
+            </div>
 
         </div>
 
 
-        <div class="footer-links">
+        <!-- Payment -->
 
-            <h3>Quick Links</h3>
+        <div class="footer-payment">
 
-            <a href="#">Home</a>
-            <a href="#">Shop</a>
-            <a href="#">Collection</a>
-            <a href="#">About Us</a>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <h3>Contact</h3>
-
-            <p>📍 Tangail, Bangladesh</p>
-            <p>📞 +880 1890717577</p>
-            <p>✉ gentscottage@gmail.com</p>
-
-        </div>
-
-
-        <div class="footer-social">
-
-            <h3>Follow Us</h3>
+            <p>We Accept</p>
 
             <div>
 
-                <i class="fa-brands fa-facebook-f"></i>
+                <span>Cash on Delivery</span>
 
-                <i class="fa-brands fa-instagram"></i>
+                <span>bKash</span>
 
-                <i class="fa-brands fa-tiktok"></i>
+                <span>Nagad</span>
 
             </div>
 
@@ -403,15 +1710,143 @@
     </footer>
 
 
+    <!-- ==================================================
+                         COPYRIGHT
+    ================================================== -->
+
     <div class="copyright">
 
-        © 2026 Gents Cottage | All Rights Reserved
+        <p>
+            © 2026 <strong>Gents Cottage</strong>.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Designed with ❤️ for Modern Gentlemen.
+        </p>
 
     </div>
 
-    <script src="script.js"></script>
-    <script type="module" src="firebase.js"></script>
 
+    <!-- ==================================================
+                         CART DRAWER
+    ================================================== -->
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+
+    <aside class="cart-drawer" id="cart-drawer">
+
+        <div class="cart-header">
+
+            <h2>
+                YOUR CART
+            </h2>
+
+            <button id="close-cart">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="cart-items" id="cart-items">
+
+            <div class="empty-cart">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <h3>Your cart is empty</h3>
+
+                <p>Add some products to your cart.</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+
+                <span>Subtotal</span>
+
+                <strong id="cart-total">
+                    ৳ 0
+                </strong>
+
+            </div>
+
+
+            <button class="checkout-btn">
+
+                CHECKOUT
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================================================
+                       BACK TO TOP
+    ================================================== -->
+
+    <button id="back-to-top" class="back-to-top">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+    <!-- ==================================================
+                         WHATSAPP
+    ================================================== -->
+
+    <a
+        href="https://wa.me/8801890717577"
+        class="whatsapp-btn"
+        target="_blank"
+        aria-label="Chat on WhatsApp"
+    >
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+
+    <!-- ==================================================
+                         JAVASCRIPT
+    ================================================== -->
+
+
+    <style>
+        .checkout-summary{margin:0 0 24px;padding:18px;border:1px solid var(--border,#e7ddd5);border-radius:14px;background:#fbf6f2;box-shadow:0 8px 24px rgba(65,47,37,.05)}
+        .checkout-summary-head,.checkout-summary-total{display:flex;align-items:center;justify-content:space-between;gap:12px}
+        .checkout-summary-head{padding-bottom:12px;border-bottom:1px solid #eadfd7;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.7px}
+        .checkout-summary-head i{margin-right:7px;color:var(--gold,#b58a55)}
+        .checkout-summary-head strong{font-size:11px;color:#8a7b71;background:#fffdf9;padding:6px 9px;border-radius:20px}
+        .checkout-summary-items{max-height:190px;overflow:auto;padding:5px 0}
+        .checkout-summary-item{display:grid;grid-template-columns:1fr auto;gap:8px;padding:11px 0;border-bottom:1px solid #eee5de;font-size:13px}
+        .checkout-summary-item:last-child{border-bottom:0}
+        .checkout-summary-item span{color:#625851}
+        .checkout-summary-item strong{color:#342d29;white-space:nowrap}
+        .checkout-summary-item small{display:block;margin-top:3px;color:#95877e}
+        .checkout-summary-total{padding-top:13px;border-top:1px solid #eadfd7;font-size:13px;font-weight:700}
+        .checkout-summary-total strong{font-size:20px;color:var(--gold,#b58a55)}
+        .checkout-empty{margin:8px 0;color:#8b7d74;font-size:13px}
+        #product:disabled,#quantity:disabled{opacity:.72;cursor:not-allowed;background:#f1e9e3}
+        .order-success-items{margin-top:14px;padding:12px 14px;border:1px solid #eadfd7;border-radius:10px;background:#fbf6f2;line-height:1.8}
+    </style>
+
+    <script src="script.js"></script>
+
+    <script type="module" src="firebase.js"></script>
 
 </body>
 
