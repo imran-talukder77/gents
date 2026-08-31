@@ -753,3 +753,32 @@ footer {
     }
 
 }
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+
+#cart-count {
+    position: absolute;
+
+    top: -10px;
+    right: -12px;
+
+    background: #d4a437;
+
+    color: #061526;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 11px;
+    font-weight: bold;
+}

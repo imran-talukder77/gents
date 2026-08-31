@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -32,9 +32,16 @@
         </nav>
 
         <div class="nav-icons">
+
             <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
+
+            <div class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+
             <i class="fa-solid fa-user"></i>
+
         </div>
 
     </header>
@@ -162,7 +169,7 @@
 
                     <p class="price">৳ 1,250</p>
 
-                    <button>Add To Cart</button>
+                    <button class="add-cart">Add To Cart</button>
 
                 </div>
 
@@ -184,7 +191,7 @@
 
                     <p class="price">৳ 850</p>
 
-                    <button>Add To Cart</button>
+                    <button class="add-cart">Add To Cart</button>
 
                 </div>
 
@@ -206,7 +213,7 @@
 
                     <p class="price">৳ 2,500</p>
 
-                    <button>Add To Cart</button>
+                    <button class="add-cart">Add To Cart</button>
 
                 </div>
 
@@ -228,7 +235,7 @@
 
                     <p class="price">৳ 3,200</p>
 
-                    <button>Add To Cart</button>
+                    <button class="add-cart">Add To Cart</button>
 
                 </div>
 
@@ -325,6 +332,9 @@
 
     </div>
 
+    <script src="script.js"></script>
+
 
 </body>
+
 </html>
